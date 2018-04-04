@@ -1,59 +1,113 @@
 <!DOCTYPE HTML>
 <html lang = "en">
-  <head>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-    <title>Compounding Interest Calculator</title>
-    <meta charset = "UTF-8" />
+	<head>
+		<meta charset = "UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Style Sheets-->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 	
+	<!--Title-->
+     	<title>Compounding Interest Calculator</title>
+	<head>
+	<!--JQuery Mobile STARTS-->
+    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Javascript that styles CSS-->
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<!--Javascript that is for Mobile-->
+		<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+	<!--JQuery Mobile ENDS-->
+
+<!-- desktop-->
+	<link href="stylesheet/desktop/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:1000px) and (max-width:1920px"/>
+<!-- phone -->
+	<link href="stylesheet/phone/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:320px) and (max-width:1920px)"/>
+<!-- tablet -->
+	<link href="stylesheet/tablet/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:750px) and (max-width:1000px)"/>
+<!-- print -->
+	<link href="stylesheet/print/main.css" rel="stylesheet" type="text/css" media="print"/>
+
+	</head>
+	<!--JavaScript STARTS-->
+    	<script src="JS/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	
-    <script src="JS/index.js"></script>
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  </head>
-  
-<body>
-    <h1>Interest Calculator Change in Desktop</h1>
-    <form>
-      <fieldset>
-       <legend>Input v2</legend>
-        <p>
-          <label> Beginning Balance </label>
-          <input id="balance" value = "Enter Value Here" />
-        </p>
-        <p>
-        <label> Monthly Payments ($):</label>
-        <input id="monthly" value = "Enter Value Here" />
-        </p>
-        <p>
-          <label> Annual Interest Rate (%):</label>
-          <input id="interest" value = "Enter Value Here" />
-        </p>
-        <p>
-          <label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
-          <input id="compound" value = "Enter Value Here" />
-        </p> 
-        <p>
-          <label> Time Period:</label>
-          <input id="year" value = "Enter Value Here" />
-		</p>
-		<p>
-		<label><button type="button" onclick="calculate()">Calculate</button></label>
-		<label><button type="reset" onclick="Reset()">Clear</button></label>
-		</p>
-		<p>
-		<label>Total Amount:</label>
-		<input id="total" value = "Total" />
-		</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!--JavaScript ENDS-->
+	</head>
+
+		<!---CALCULATOR V2 STARTS-->
+		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL STARTS-->
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+		<!--Get Home URL and put it in href. and Company Name-->
+			      <a class="navbar-brand" href="URL home">Calculate</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="#">Home</a></li>
+			      <li><a href="#">Calculator</a></li>
+			      <li><a href="#">Contacts</a></li>
+			      <li><a href="#">About</a></li>
+		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL ENDS-->
+    </ul>
+  </div>
+</nav>
+		<!--Bottom Text-->
+			<div class="container">
+			  <h3>Interest Calculator</h3>
+			  <p>Calculate and Cut down cost or save your money.</p>
+				
+		<!--CALCULATOR STARTS-->
+			  <fieldset>
+		      <legend>Input</legend>
+		        <br><p>
+					<label> Beginning Balance: </label>
+					<input id="balance" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Monthly Payments ($):</label>
+					<input id="monthly" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Annual Interest Rate (%):</label>
+					<input id="interest" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
+					<input id="compound" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+		          <label> Time Period: </label>
+		          <input id="year" value = "Enter Value Here" />
+				</br></p>
+				<br><p>
+					<label><button type="button" onclick="calculate()">Calculate</button></label>
+					<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</br></p>
+				<br><p>
+					<label>Total Amount:</label>
+					<input id="total" value = "Total" />
+				</br></p>
+			<!--CALCULATOR ENDS-->
+</div>
       </fieldset>
     </form>
-		
-	<!--- Here Javascript will generate the bar chart. -->
+    
+	<!---Here Javascript will generate the bar chart.-->
 	<canvas id="mainChart"></canvas>
 
 	<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
 	<ul id="mainList"></ul>
+	
+	<footer>
+				<p>
+					&copy; Copyright IT485 Spring Group 4
+				</p>
+			</footer>
 
 </body>
 </html>

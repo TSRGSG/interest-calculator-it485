@@ -1,3 +1,111 @@
+/*Navigator Horizontal Bar START*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+/*Navigation Bar Names*/
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/*Navigator Horizontal Bar ENDS*/
+
+/*==================================================*/
+
+/*Font Starts*/
 * {
 	font-family: 'Open Sans', sans-serif;
 }
+/*Font Ends*/
+
+/*==================================================*/
+
+/*Body Starts*/
+/*Body COLOR & FONT & SIZING Starts*/
+body {
+	margin: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
+	padding: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
+	text-align: 0; /*Center*/
+	font: 15px Arial, Helvetica, sans-serif; /*Text Size*/
+	font-size: 15px; /*Font Sizing*/
+	color: #000000; /*Color*/
+	background: #000000; /*Background*/
+	background-image:url(images/background.png); /*Background Images*/
+	background-repeat:repeat-x;
+}
+*
+{
+  margin: 0 auto 0 auto;
+ text-align:left;}
+
+#container
+{
+  display: block; 
+  height:auto;
+  position: relative; 
+  width: 940px;
+}
+/*Body COLOR Ends*/
+
+/*==================================================*/
+
+/*Text Centered STARTS*/
+html, body {
+text-align: center;
+}
+p {text-align: center;}
+
+/*Text Centered ENDS*/
+
+/*==================================================*/
+
+/*Overflow SCROLL STARTS*/
+/*Used this so the Black Space on the BOTTOM would disapear.*/
+div {
+    overflow: hidden;
+}
+
+/*Overflow SCROLL ENDS*/
+
+/*==================================================*/
+
+/*Footer Starts*/
+footer {
+background-color: 000000;
+clear: both;
+
+}
+
+footer p {
+text-align: center;
+color: Black;
+padding: 1em 0;
+}
+/*Footer ENDS*/
