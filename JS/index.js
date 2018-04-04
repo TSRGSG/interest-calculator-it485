@@ -24,8 +24,8 @@ function calculate() {
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
 	if (parseInt(n) == 12){
 		//Main Loop (Read Carefully)
-    	for (count = 1; count != t + 1; count++) {
-        	A = (A * r) + parseInt(A);
+		for (count = 1; count != t + 1; count++) {
+			A = (A * r) + parseInt(A);
 			A += parseInt(m) * 12;
 		
 			//Appending to bottom of thet page
@@ -34,10 +34,10 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Year " + count);
 			ActualAmount.push(A);
-    	}
+		}
 	} else if (n == 6) {
 		for (count = 1; count != (t * 2)+ 1; count++) {
-        	A = (A * (r/2)) + parseInt(A);
+			A = (A * (r/2)) + parseInt(A);
 			A += parseInt(m) * 6;
 		
 			//Appending to bottom of thet page
@@ -46,10 +46,10 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Semiannually " + count);
 			ActualAmount.push(A);
-    	}	
+		}	
 	} else if (n == 3) {
 		for (count = 1; count != (t * 4) + 1; count++) {
-        	A = (A * (r/4)) + parseInt(A);
+			A = (A * (r/4)) + parseInt(A);
 			A += parseInt(m) * 3;
 		
 			//Appending to bottom of thet page
@@ -58,10 +58,10 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Quarter " + count);
 			ActualAmount.push(A);
-    	}
+			}
 	} else if (n == 1) {
 		for (count = 1; count != (t * 12)+ 1; count++) {
-        	A = (A * (r/12)) + parseInt(A);
+			A = (A * (r/12)) + parseInt(A);
 			A += parseInt(m) * 1;
 		
 			//Appending to bottom of thet page
@@ -70,7 +70,7 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Month " + count);
 			ActualAmount.push(A);
-    	}		
+			}		
 	} else {
 		document.getElementById("total").value = "Compounding can be only 12 (Yearly), 3 (Quarterly), & 1 (Monthly)";
 		//break;
@@ -100,6 +100,22 @@ function calculate() {
     options: {}
 	});
 	//Graphing END
+}
+
+function calculateDeposit() {
+	var goal = document.getElementById("goal").value;
+	var initial = document.getElementById("initial").value;
+	var time = document.getElementById("time").value;
+	var interest = document.getElementById("interest").value;
+	var compound = document.getElementById("compound").value;
+
+	var gl = parseInt(goal);
+	var il = parseInt(initial);
+	var tm = parseInt(time);
+	var rt = parseInt(interest);
+	var td = parseInt(compound);
+
+
 }
 
 //Adding comma to number
