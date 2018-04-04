@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+	<head>
+			<meta charset = "UTF-8" />
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!--Style Sheets-->
+		    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		 	
+		<!--Title-->
+	     	<title>Compounding Interest Calculator</title>
+		<head>
+		<!--JQuery Mobile STARTS-->
+	    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Javascript that styles CSS-->
+			<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<!--Javascript that is for Mobile-->
+			<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<!--JQuery Mobile ENDS-->
+	
+		<!-- desktop-->
+			<link href="stylesheet/desktop/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:1000px) and (max-width:1920px"/>
+		<!-- phone -->
+			<link href="stylesheet/phone/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:320px) and (max-width:1920px)"/>
+		<!-- tablet -->
+			<link href="stylesheet/tablet/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:750px) and (max-width:1000px)"/>
+		<!-- print -->
+			<link href="stylesheet/print/main.css" rel="stylesheet" type="text/css" media="print"/>
+	
+		</head>
+		<!--JavaScript STARTS-->
+	    	<script src="JS/index.js"></script>
+			<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+			<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<!--JavaScript ENDS-->
+	</head>
+
+		<!---CONTACTS STARTS-->
+		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL STARTS-->
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+		<!--Get Home URL and put it in href. and Company Name-->
+			      <a class="navbar-brand" href="URL home">Calculate</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="#">Home</a></li>
+			      <li><a href="#">Calculator</a></li>
+			      <li><a href="#">Contacts</a></li>
+			      <li><a href="#">About</a></li>
+		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL ENDS-->
+    </ul>
+  </div>
+</nav>
+		<!--TOP Text STARTS-->
+			<div class="container">
+			  <h3>Contacts Us</h3>
+			  <p>Contacts us for more information or any problems / concerns.</p>
+		<!--TOP Text ENDS-->	
+			
+		<!--CONTACTS STARTS-->
+			  <fieldset>
+		        <p>
+				<!--Full name in a input text-->
+				<form action="/action_page.php"> Full Name: <input type="text" name="FullName" value=""><br>
+		        <!--Email-->
+		        Email: <input type="text" name="Email" value=""><br>
+		       	<!--Subject-->
+		       	Subject: <input type="text" name="Subject" value=""><br>
+		       	<!--Text Box that will expand but wont retact back to normal-->
+		        Comments or Concerns / Problems: <textarea rows="5" cols="300"></textarea><br>
+		      </br>
+				<!--Submit and Reset Buttons-->
+				<label><button type="button" onclick="Submit()">Submit</button></label>
+				<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</p>
+		<!--CONTACTS ENDS-->
+</div>
+      </fieldset>
+    </form>
+    
+	<!---Here Javascript will generate the bar chart.-->
+	<canvas id="mainChart"></canvas>
+
+	<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
+	<ul id="mainList"></ul>
+	
+	<footer>
+		<!--Copyrights-->
+				<p>
+					&copy; Copyright IT485 Spring Group 4
+				</p>
+			</footer>
+
+</body>
+</html>
