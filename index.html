@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>Compounding Interest Calculator</title>
+    <meta charset = "UTF-8" />
+	
+    <script src="JS/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  
+<body>
+    <h1>Interest Calculator</h1>
+    <form>
+      <fieldset>
+       <legend>Input</legend>
+        <p>
+          <label> Beginning Balance </label>
+          <input id="balance" value = "Enter Value Here" />
+        </p>
+        <p>
+        <label> Monthly Payments ($):</label>
+        <input id="monthly" value = "Enter Value Here" />
+        </p>
+        <p>
+          <label> Annual Interest Rate (%):</label>
+          <input id="interest" value = "Enter Value Here" />
+        </p>
+        <p>
+          <label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
+          <input id="compound" value = "Enter Value Here" />
+        </p> 
+        <p>
+          <label> Time Period:</label>
+          <input id="year" value = "Enter Value Here" />
+		</p>
+		<p>
+		<label><button type="button" onclick="calculate()">Calculate</button></label>
+		<label><button type="reset" onclick="Reset()">Clear</button></label>
+		</p>
+		<p>
+		<label>Total Amount:</label>
+		<input id="total" value = "Total" />
+		</p>
+      </fieldset>
+    </form>
+		
+	<!--- Here Javascript will generate the bar chart. -->
+	<canvas id="mainChart"></canvas>
+
+	<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
+	<ul id="mainList"></ul>
+
+</body>
+</html>
