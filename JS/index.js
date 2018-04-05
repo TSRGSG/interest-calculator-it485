@@ -102,6 +102,27 @@ function calculate() {
 	//Graphing END
 }
 
+function calculateGoal() {
+    var initial = parseInt(document.getElementById("initial").value);
+    var contribute = parseInt(document.getElementById("contribute").value);
+    var interest = parseInt(document.getElementById("interest").value);
+    var compound = parseInt(document.getElementById("compound").value);
+
+    //Checking for Yearly, Semiannually, Quarterly, & Monthly.
+    if (compound == 12) {
+
+    } else if (compound == 6) {
+
+    } else if (compound == 3) {
+
+    } else if (compound == 1) {
+
+    } else {
+        document.getElementById("total").value = "Compounding can be only 12 (Yearly), 3 (Quarterly), & 1 (Monthly)";
+        //break;
+    }
+}
+
 //Adding comma to number
 function addCommas(nStr)
 {
