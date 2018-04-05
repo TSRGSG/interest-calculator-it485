@@ -17,15 +17,25 @@ li {
 </ul>
 
 ul {
+margin-top:50px;
+}
+
+/*Moves the TOP BAR Navigation Bar to the RIGHT SIDE.*/
+menu {
+float:right;
+margin-top:0;
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: clear;
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
@@ -85,16 +95,17 @@ p {text-align: center;}
 
 /*Text Centered ENDS*/
 
+
 /*==================================================*/
 
-/*Input for Width & Length STARTS*/
+/*Input for CALCULATOR Width & Length STARTS*/
 
 section { column-width: 250px;
 }
 section { height: 900px;
 }
 
-/*Input for Width & Length ENDS*/
+/*Input for CALULATOR Width & Length ENDS*/
 
 /*Graph to a smaller size STARTS*/
 
@@ -114,6 +125,10 @@ div {
 }
 
 /*Overflow SCROLL ENDS*/
+
+/*==================================================*/
+
+
 
 /*==================================================*/
 

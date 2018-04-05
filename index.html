@@ -47,15 +47,18 @@
 		<!--Get Home URL and put it in href. and Company Name-->
 			      <a class="navbar-brand" href="URL home">Calculate</a>
 			    </div>
-			    <ul class="nav navbar-nav">
+			   <menu> 
+			   	<ul class="nav navbar-nav">
 			      <li class="active"><a href="#">Home</a></li>
 			      <li><a href="#">Calculator</a></li>
 			      <li><a href="#">Contacts</a></li>
 			      <li><a href="#">About</a></li>
+			  </menu>
 		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL ENDS-->
     </ul>
   </div>
 </nav>
+
 		<!--Bottom Text-->
 			<div class="container">
 			  <h3>Interest Calculator</h3>
@@ -85,26 +88,32 @@
 		          <input id="year" value = "Enter Value Here" />
 				</br></p>
 				<br><p>
-					<label><button type="button" onclick="calculate()">Calculate</button></label>
-					<label><button type="reset" onclick="Reset()">Clear</button></label>
-				</br></p>
-				<br><p>
+					<!--Total Amount-->
 					<label>Total Amount:</label>
 					<input id="total" value = "Total" />
 				</br></p>
+				<br><p>
+					<!--Buttons Calculate and Reset-->
+					<label><button type="button" onclick="calculate()">Calculate</button></label>
+					<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</br></p>
+				
 				</section> 
 			<!--CALCULATOR ENDS-->
-</div>
+		
+		<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
+				
+					<ul id="mainList"></ul> 
+			<!--Table for List ENDS-->
+		
+				<!---Here Javascript will generate the bar chart.-->
+	
+					<canvas id="mainChart"></canvas>
+				
+			</div>
       </fieldset>
     </form>
-    
-	<!---Here Javascript will generate the bar chart.-->
-	
-	<canvas id="mainChart"></canvas>
 
-	<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
-	<ul id="mainList"></ul>
-	</div.b>
 	<footer>
 				<p>
 					&copy; Copyright IT485 Spring Group 4
