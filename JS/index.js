@@ -1,7 +1,7 @@
 function calculate() {
 
     var balance = parseInt(document.getElementById("balance").value);
-    var monthly = parseIntdocument.getElementById("monthly").value);
+    var monthly = parseInt(document.getElementById("monthly").value);
     var interest = parseInt(document.getElementById("interest").value);
     var compound = parseInt(document.getElementById("compound").value);
     var year = parseInt(document.getElementById("year").value);
@@ -20,7 +20,7 @@ function calculate() {
 		//Main Loop (Read Carefully)
         for (count = 1; count != year + 1; count++) {
         	A = (A * r) + parseInt(A);
-			A += parseInt(m) * 12;
+            A += monthly * 12;
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Year " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -32,7 +32,7 @@ function calculate() {
     } else if (compound == 6) {
         for (count = 1; count != (year * 2)+ 1; count++) {
         	A = (A * (r/2)) + parseInt(A);
-			A += parseInt(m) * 6;
+            A += monthly * 6;
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Semiannually " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -44,7 +44,7 @@ function calculate() {
     } else if (compound == 3) {
         for (count = 1; count != (year * 4) + 1; count++) {
         	A = (A * (r/4)) + parseInt(A);
-			A += parseInt(m) * 3;
+            A += monthly * 3;
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Quarter " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -56,7 +56,7 @@ function calculate() {
     } else if (compound == 1) {
         for (count = 1; count != (year * 12)+ 1; count++) {
         	A = (A * (r/12)) + parseInt(A);
-			A += parseInt(m) * 1;
+            A += monthly * 1;
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Month " + count + ": $" + addCommas(Math.round(A)) + "</li>");
