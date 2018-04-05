@@ -77,12 +77,37 @@ body {
 /*==================================================*/
 
 /*Text Centered STARTS*/
+
 html, body {
 text-align: center;
 }
 p {text-align: center;}
 
 /*Text Centered ENDS*/
+
+/*==================================================*/
+
+/*Input for Width & Length STARTS*/
+
+section { column-width: 250px;
+}
+section { height: 900px;
+}
+
+/*Input for Width & Length ENDS*/
+
+/*Graph to a smaller size STARTS*/
+
+div.b {
+	resize: both;
+    overflow: auto;
+}
+
+section {
+	resize: both;
+    overflow: auto;
+}
+/*Graph to a smaller size ENDS*/
 
 /*==================================================*/
 
