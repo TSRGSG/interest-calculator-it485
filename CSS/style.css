@@ -63,10 +63,10 @@ body {
 	margin: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
 	padding: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
 	text-align: 0; /*Center*/
-	font: 15px Arial, Helvetica, sans-serif; /*Text Size*/
-	font-size: 15px; /*Font Sizing*/
-	color: #000000; /*Color*/
-	background: #000000; /*Background*/
+	font: 14px Arial, Helvetica, sans-serif; /*Text Size*/
+	font-size: 14px; /*Font Sizing*/
+	color: 0; /*Color*/
+	background: 0; /*Background*/
 	background-image:url(images/background.png); /*Background Images*/
 	background-repeat:repeat-x;
 }
