@@ -25,19 +25,25 @@
 			<fieldset>
 				<legend>Input</legend>
 				<br><p>
-					<label> Loan Amount ($): </label>
-					<input id="loan" value="Enter Value Here" />
+					<label> Saving Goal ($): </label>
+					<input id="goal" value="Enter Value Here" />
+				</p><p>
+					<label> Initial Investment ($): </label>
+					<input id="initial" value="Enter Value Here" />
+				</p><p>
+					<label> Term Period for Saving (Year): </label>
+					<input id="year" value="Enter Value Here" />
 				</p><p>
 					<label> Annual Interest Rate (%): </label>
 					<input id="interest" value="Enter Value Here" />
 				</p><p>
-					<label> Term Period for Loan (Year): </label>
-					<input id="year" value="Enter Value Here" />
+					<label> Compounding Frequency (Month): </label>
+					<input id="compound" value="Enter Value Here" />
 				</p><p>
-					<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
+					<label><button type="button" onclick="calculate_goal()">Calculate</button></label>
 					<label><button type="reset" onclick="Reset()">Clear</button></label>
 				</p><p>
-					<label>Monthly Payment ($):</label>
+					<label>Monthly Saving ($):</label>
 					<input id="monthly" value="Total" />
 				</p>
 				<!--CALCULATOR ENDS-->
