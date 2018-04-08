@@ -126,22 +126,7 @@ function calculate() {
 	//Graphing END
 }
 
-<<<<<<< HEAD
-function calculateDeposit() {
-	var goal = document.getElementById("goal").value;
-	var initial = document.getElementById("initial").value;
-	var time = document.getElementById("time").value;
-	var interest = document.getElementById("interest").value;
-	var compound = document.getElementById("compound").value;
 
-	var gl = parseInt(goal);
-	var il = parseInt(initial);
-	var tm = parseInt(time);
-	var rt = parseInt(interest);
-	var td = parseInt(compound);
-
-
-=======
 function calculateGoal() {
     var goal = parseInt(document.getElementById("goal").value);
     var initial = parseInt(document.getElementById("initial").value);
@@ -161,8 +146,7 @@ function calculateGoal() {
     } else {
         document.getElementById("total").value = "Compounding can be only 12 (Yearly), 3 (Quarterly), & 1 (Monthly)";
         //break;
-    }
->>>>>>> b01b9e4ef72fe92f31428bbe2f3284105abd6fab
+	}
 }
 
 //Adding comma to number
