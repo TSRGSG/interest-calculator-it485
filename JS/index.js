@@ -18,15 +18,9 @@ function calculate() {
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
     if (compound == 12){
 		//Main Loop (Read Carefully)
-<<<<<<< HEAD
-		for (count = 1; count != t + 1; count++) {
-			A = (A * r) + parseInt(A);
-			A += parseInt(m) * 12;
-=======
         for (count = 1; count != year + 1; count++) {
         	A = (A * r) + parseInt(A);
             A += monthly * 12;
->>>>>>> b01b9e4ef72fe92f31428bbe2f3284105abd6fab
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Year " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -34,19 +28,11 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Year " + count);
 			ActualAmount.push(A);
-<<<<<<< HEAD
-		}
-	} else if (n == 6) {
-		for (count = 1; count != (t * 2)+ 1; count++) {
-			A = (A * (r/2)) + parseInt(A);
-			A += parseInt(m) * 6;
-=======
     	}
     } else if (compound == 6) {
         for (count = 1; count != (year * 2)+ 1; count++) {
         	A = (A * (r/2)) + parseInt(A);
             A += monthly * 6;
->>>>>>> b01b9e4ef72fe92f31428bbe2f3284105abd6fab
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Semiannually " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -54,19 +40,11 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Semiannually " + count);
 			ActualAmount.push(A);
-<<<<<<< HEAD
-		}	
-	} else if (n == 3) {
-		for (count = 1; count != (t * 4) + 1; count++) {
-			A = (A * (r/4)) + parseInt(A);
-			A += parseInt(m) * 3;
-=======
     	}	
     } else if (compound == 3) {
         for (count = 1; count != (year * 4) + 1; count++) {
         	A = (A * (r/4)) + parseInt(A);
             A += monthly * 3;
->>>>>>> b01b9e4ef72fe92f31428bbe2f3284105abd6fab
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Quarter " + count + ": $" + addCommas(Math.round(A)) + "</li>");
@@ -74,19 +52,11 @@ function calculate() {
 			//Adding to array for graph
 			BottomLabel.push("Quarter " + count);
 			ActualAmount.push(A);
-<<<<<<< HEAD
-			}
-	} else if (n == 1) {
-		for (count = 1; count != (t * 12)+ 1; count++) {
-			A = (A * (r/12)) + parseInt(A);
-			A += parseInt(m) * 1;
-=======
     	}
     } else if (compound == 1) {
         for (count = 1; count != (year * 12)+ 1; count++) {
         	A = (A * (r/12)) + parseInt(A);
             A += monthly * 1;
->>>>>>> b01b9e4ef72fe92f31428bbe2f3284105abd6fab
 		
 			//Appending to bottom of thet page
 			$(mainList).append("<li>Month " + count + ": $" + addCommas(Math.round(A)) + "</li>");
