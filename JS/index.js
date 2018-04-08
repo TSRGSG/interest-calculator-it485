@@ -9,7 +9,7 @@ function calculate() {
     var r = interest / 100;    
     var A = balance;
 	
-	var BottomLabel = ["0"];;
+	var BottomLabel = ["0"];
 	var ActualAmount = ["0"];
 
 	//Cleaning List
@@ -135,6 +135,27 @@ function calculate_loan() {
 	$(ending_balance_list).append("<li>Ending Balance</li>");
 	$(total_interest_list).append("<li>Total Interest</li>");
 
+	//Creating Array for graphing
+	var bottom_label = ["0","1","2","3"];
+	var ending_balance = ["3", "2", "1", "0"];
+	var cumulative_payment = ["0", "1", "2", "4"];
+
+	//Graphing TEST
+	var ctx = document.getElementById('mainChart').getContext('2d');
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: 'bar',
+
+		// The data for our dataset
+		data: {
+			labels: BottomLabel,
+			datasets: [ending_balance, cumulative_payment]
+		},
+
+		// Configuration options go here
+		options: {}
+	});
+	//Graphing END
 
 	//Loop for generating List
 	for (var count = 1; count <= n; count++) {
