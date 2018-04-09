@@ -118,6 +118,7 @@ function calculate_loan() {
 	var I = 0;
 	var P = 0;
 	var total_interest = 0;
+	var total_payment = 0;
 
 	//Cleaning List
 	$(period_list).empty();
@@ -136,34 +137,21 @@ function calculate_loan() {
 	$(total_interest_list).append("<li>Total Interest</li>");
 
 	//Creating Array for graphing
-	var bottom_label = ["0","1","2","3"];
-	var ending_balance = ["3", "2", "1", "0"];
-	var cumulative_payment = ["0", "1", "2", "4"];
-
-	//Graphing TEST
-	var ctx = document.getElementById('mainChart').getContext('2d');
-	var chart = new Chart(ctx, {
-		// The type of chart we want to create
-		type: 'bar',
-
-		// The data for our dataset
-		data: {
-			labels: BottomLabel,
-			datasets: [ending_balance, cumulative_payment]
-		},
-
-		// Configuration options go here
-		options: {}
-	});
-	//Graphing END
+	var bottom_label = ["Control"];
+	var ending_balance = ["0"];
+	var cumulative_payment = ["0"];
 
 	//Loop for generating List
 	for (var count = 1; count <= n; count++) {
 		//Appending to period of the page
 		$(period_list).append("<li>" + count + "</li>");
+		//Appending Graph
+		bottom_label.push(count);
 
 		//Appending to starting balance of the page
 		$(starting_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
+		//Appending Graph
+		ending_balance.push(A.toFixed(2))
 
 		//Calculating Interest
 		I = A * i;
@@ -184,7 +172,53 @@ function calculate_loan() {
 		total_interest += I;
 		//Appending to ending balance list of the page
 		$(total_interest_list).append("<li>" + addCommas(total_interest.toFixed(2)) + "</li>");
+
+		//Appending Graph for total payment
+		total_payment += P;
+		cumulative_payment.push((total_interest + total_payment).toFixed(2))
 	}
+
+	//Graphing TEST
+	var densityCanvas = document.getElementById("mainChart");
+
+	var ending_bar = {
+		label: 'Ending Balance for the Period',
+		data: [0],
+		backgroundColor: 'rgba(0, 99, 132, 0.6)',
+		borderWidth: 0,
+	};
+	ending_bar.data = ending_balance;
+
+	var interest_bar = {
+		label: 'Cumulative Interest Payment for the Period',
+		data: [0],
+		backgroundColor: 'rgba(99, 132, 0, 0.6)',
+		borderWidth: 0,
+	};
+	interest_bar.data = cumulative_payment;
+
+	var label_bar = {
+		labels: ["Test"],
+		datasets: [ending_bar, interest_bar]
+	};
+	label_bar.labels = bottom_label;
+
+	var chartOptions = {
+		scales: {
+			xAxes: [{
+				barPercentage: 1,
+				categoryPercentage: 0.6
+			}],
+			yAxes: [{}]
+		}
+	};
+
+	var barChart = new Chart(mainChart, {
+		type: 'bar',
+		data: label_bar,
+		options: chartOptions
+	});
+	//Graphing END
 
 }
 
