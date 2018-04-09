@@ -7,7 +7,7 @@
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	 	
 	<!--Title-->
-     	<title>Home Page</title>
+     	<title>Compounding Interest Calculator</title>
 	<head>
 	
 		<!--JQuery Mobile STARTS-->
@@ -41,6 +41,7 @@
 	<!--JavaScript ENDS-->
 	</head>
 
+		<!---CALCULATOR V2 STARTS-->
 		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL STARTS-->
 			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
@@ -60,7 +61,57 @@
   </div>
 </nav>
 
+		<!--Bottom Text-->
+			<div class="container">
+			  <h3>Interest Calculator</h3>
+			  <p>Calculate and Cut down cost or save your money.</p>
+				
+		<!--CALCULATOR STARTS-->
+			 <section><fieldset>
+		      <legend>Input</legend>
+		        <br><p>
+					<label> Beginning Balance: </label>
+					<input id="balance" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Monthly Payments ($):</label>
+					<input id="monthly" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Annual Interest Rate (%):</label>
+					<input id="interest" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+					<label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
+					<input id="compound" value = "Enter Value Here" />
+		        </br></p>
+		        <br><p>
+		          <label> Time Period: </label>
+		          <input id="year" value = "Enter Value Here" />
+				</br></p>
+				<br><p>
+					<!--Total Amount-->
+					<label>Total Amount:</label>
+					<input id="total" value = "Total" />
+				</br></p>
+				<br><p>
+					<!--Buttons Calculate and Reset-->
+					<label><button type="button" onclick="calculate()">Calculate</button></label>
+					<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</br></p>
+				
+				</section> 
+			<!--CALCULATOR ENDS-->
+		
+		<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
+				
+					<ul id="mainList"></ul> 
+			<!--Table for List ENDS-->
+		
+				<!---Here Javascript will generate the bar chart.-->
 	
+					<canvas id="mainChart"></canvas>
+				
 			</div>
       </fieldset>
     </form>

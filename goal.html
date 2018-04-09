@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang = "en">
 	<head>
 		<meta charset = "UTF-8" />
@@ -59,17 +59,77 @@
     </ul>
   </div>
 </nav>
+		
+		<!--Bottom Text-->
+				<div class="container">
+					<h3>Goal Monthly Payment Calculator</h3>
+					<p></p>
 
-	
-			</div>
-      </fieldset>
-    </form>
+	<body>
+		
+			<!--CALCULATOR STARTS-->
+			<section><fieldset>
+				<legend>Input</legend>
+				<br><p>
+					<label> Saving Goal ($): </label>
+					<input id="goal" value="Enter Value Here" />
+				</p><p>
+					<label> Initial Investment ($): </label>
+					<input id="initial" value="Enter Value Here" />
+				</p><p>
+					<label> Term Period for Saving (Year): </label>
+					<input id="year" value="Enter Value Here" />
+				</p><p>
+					<label> Annual Interest Rate (%): </label>
+					<input id="interest" value="Enter Value Here" />
+				</p><p>
+					<label> Compounding Frequency (Month): </label>
+					<input id="compound" value="Enter Value Here" />
+				</p><p>
+					<label><button type="button" onclick="calculate_goal()">Calculate</button></label>
+					<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</p><p>
+					<label>Monthly Saving ($):</label>
+					<input id="monthly" value="Total" />
+				</p>
+				<!--CALCULATOR ENDS-->
 
-	<footer>
+		
+			</section></fieldset>
+		</div>
+
+		<!---Here Javascript will generate the bar chart.-->
+		<canvas id="mainChart"></canvas>
+
+		<!--- Here Javascript will generate the list. -->
+		<ul id="period_list" style="float:left;">
+			<li>Year X</li>
+		</ul>
+
+		<ul id="starting_balance_list" style="float:left;">
+			<li>Year X</li>
+		</ul>
+
+		<ul id="interest_list" style="float:left;">
+			<li>Interest earned this year XX</li>
+		</ul>
+
+		<ul id="principal_list" style="float:left;">
+			<li>Interest earned this year XX</li>
+		</ul>
+
+		<ul id="ending_balance_list" style="float:left;">
+			<li>Ending balance is XX</li>
+		</ul>
+
+		<ul id="total_interest_list" style="float:left;">
+			<li>Ending balance is XX</li>
+		</ul>
+<footer>
+		<!--Copyrights-->
 				<p>
 					&copy; Copyright IT485 Spring Group 4
 				</p>
 			</footer>
-
-</body>
+	</body>
 </html>
