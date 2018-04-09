@@ -9,28 +9,30 @@
 	<!--Title-->
      	<title>Compounding Interest Calculator</title>
 	<head>
-	<!--JQuery Mobile STARTS-->
-    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--Javascript that styles CSS-->
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<!--Javascript that is for Mobile-->
-		<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-
-	<!--JQuery Mobile ENDS-->
-
-<!-- desktop-->
-	<link href="stylesheet/desktop/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:1000px) and (max-width:1920px"/>
-<!-- phone -->
-	<link href="stylesheet/phone/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:320px) and (max-width:1920px)"/>
-<!-- tablet -->
-	<link href="stylesheet/tablet/main.css" rel="stylesheet" type="text/css" media="only screen and (min-width:750px) and (max-width:1000px)"/>
-<!-- print -->
-	<link href="stylesheet/print/main.css" rel="stylesheet" type="text/css" media="print"/>
-
+	
+		<!--JQuery Mobile STARTS-->
+	    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Javascript that styles CSS-->
+			<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<!--Javascript that is for Mobile-->
+			<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<!--JQuery Mobile ENDS-->
+	
+		<!--Resolution for Desktop, Mobile, Tablet STARTS-->
+		<!-- desktop-->
+			<link href="CSS/Res/desktop" rel="stylesheet" type="text/css" media="only screen and (min-width:1000px) and (max-width:1920px"/>
+		<!-- phone -->
+			<link href="CSS/Res/phone" rel="stylesheet" type="text/css" media="only screen and (min-width:320px) and (max-width:1920px)"/>
+		<!-- tablet -->
+			<link href="CSS/Res/tablet" rel="stylesheet" type="text/css" media="only screen and (min-width:750px) and (max-width:1000px)"/>
+			<!--Resolution for Desktop, Mobile, Tablet ENDS-->
+			
 	</head>
 	<!--JavaScript STARTS-->
     	<script src="JS/index.js"></script>
+	
+		<!--CSS-->
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,22 +49,25 @@
 		<!--Get Home URL and put it in href. and Company Name-->
 			      <a class="navbar-brand" href="URL home">Calculate</a>
 			    </div>
-			    <ul class="nav navbar-nav">
+			   <menu> 
+			   	<ul class="nav navbar-nav">
 			      <li class="active"><a href="#">Home</a></li>
 			      <li><a href="#">Calculator</a></li>
 			      <li><a href="#">Contacts</a></li>
 			      <li><a href="#">About</a></li>
+			  </menu>
 		<!--NAV TOP BAR GOING ACCROSS HORIZONTAL ENDS-->
     </ul>
   </div>
 </nav>
+
 		<!--Bottom Text-->
 			<div class="container">
 			  <h3>Interest Calculator</h3>
 			  <p>Calculate and Cut down cost or save your money.</p>
 				
 		<!--CALCULATOR STARTS-->
-			  <fieldset>
+			 <section><fieldset>
 		      <legend>Input</legend>
 		        <br><p>
 					<label> Beginning Balance: </label>
@@ -85,24 +90,32 @@
 		          <input id="year" value = "Enter Value Here" />
 				</br></p>
 				<br><p>
-					<label><button type="button" onclick="calculate()">Calculate</button></label>
-					<label><button type="reset" onclick="Reset()">Clear</button></label>
-				</br></p>
-				<br><p>
+					<!--Total Amount-->
 					<label>Total Amount:</label>
 					<input id="total" value = "Total" />
 				</br></p>
+				<br><p>
+					<!--Buttons Calculate and Reset-->
+					<label><button type="button" onclick="calculate()">Calculate</button></label>
+					<label><button type="reset" onclick="Reset()">Clear</button></label>
+				</br></p>
+				
+				</section> 
 			<!--CALCULATOR ENDS-->
-</div>
+		
+		<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
+				
+					<ul id="mainList"></ul> 
+			<!--Table for List ENDS-->
+		
+				<!---Here Javascript will generate the bar chart.-->
+	
+					<canvas id="mainChart"></canvas>
+				
+			</div>
       </fieldset>
     </form>
-    
-	<!---Here Javascript will generate the bar chart.-->
-	<canvas id="mainChart"></canvas>
 
-	<!--- Here Javascript will generate yearly total amount in the account at the given year. -->
-	<ul id="mainList"></ul>
-	
 	<footer>
 				<p>
 					&copy; Copyright IT485 Spring Group 4

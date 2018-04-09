@@ -17,15 +17,25 @@ li {
 </ul>
 
 ul {
+margin-top:50px;
+}
+
+/*Moves the TOP BAR Navigation Bar to the RIGHT SIDE.*/
+menu {
+float:right;
+margin-top:0;
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: clear;
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
@@ -53,10 +63,10 @@ body {
 	margin: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
 	padding: 0; /*TOP, RIGHT, BOTTOM, LEFT MARGINS*/
 	text-align: 0; /*Center*/
-	font: 15px Arial, Helvetica, sans-serif; /*Text Size*/
-	font-size: 15px; /*Font Sizing*/
-	color: #000000; /*Color*/
-	background: #000000; /*Background*/
+	font: 14px Arial, Helvetica, sans-serif; /*Text Size*/
+	font-size: 14px; /*Font Sizing*/
+	color: 0; /*Color*/
+	background: 0; /*Background*/
 	background-image:url(images/background.png); /*Background Images*/
 	background-repeat:repeat-x;
 }
@@ -77,12 +87,34 @@ body {
 /*==================================================*/
 
 /*Text Centered STARTS*/
+
 html, body {
 text-align: center;
 }
 p {text-align: center;}
 
 /*Text Centered ENDS*/
+
+
+/*==================================================*/
+
+/*Input for CALCULATOR Width & Length STARTS*/
+
+section { column-width: 250px;
+}
+section { height: 900px;
+}
+
+/*Input for CALULATOR Width & Length ENDS*/
+
+/*Graph to a smaller size STARTS*/
+
+div.b {
+	resize: both;
+    overflow: auto;
+}
+
+/*Graph to a smaller size ENDS*/
 
 /*==================================================*/
 
@@ -93,6 +125,10 @@ div {
 }
 
 /*Overflow SCROLL ENDS*/
+
+/*==================================================*/
+
+
 
 /*==================================================*/
 
