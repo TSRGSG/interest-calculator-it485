@@ -1,11 +1,14 @@
-<!DOCTYPE HTML>
-<html lang = "en">
-	<head>
-			<meta charset = "UTF-8" />
-		    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="CSS/contact.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/style.css" />
 	    <!--Style Sheets-->
-		    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		 	
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<!--Title-->
 	     	<title>Compounding Interest Calculator</title>
 		<head>
@@ -35,6 +38,8 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 			<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+			<!--Google Maps Script-->
+			<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 		<!--JavaScript ENDS-->
 	</head>
 
@@ -68,20 +73,48 @@
 				<form action="/action_page.php"> Full Name: <input type="text" name="FullName" value=""><br>
 		        <!--Email-->
 		        Email: <input type="text" name="Email" value=""><br>
+		       	<!--Phone-->
+		        <form for="phone">Phone Number:</form>
+	  			<input type="tel" name="phone" id="phone" 
+				pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must be 999-999-999 format"></br>
 		       	<!--Subject-->
 		       	Subject: <input type="text" name="Subject" value=""><br>
 		       	<!--Text Box that will expand but wont retact back to normal-->
 		        Comments or Concerns / Problems: <textarea rows="5" cols="300"></textarea><br>
+		     
 		      </br>
 				<!--Submit and Reset Buttons-->
 				<label><button type="button" onclick="Submit()">Submit</button></label>
 				<label><button type="reset" onclick="Reset()">Clear</button></label>
 				</p>
-		<!--CONTACTS ENDS-->
-</div>
-      </section></fieldset>
-    </form>
-    
+				</div>
+      	</section></fieldset>
+  	 </form>
+		<!--CONTACTS ENDS-->	
+		
+		<!--Google Maps STARTS-->
+			    <aside>
+			<div id="map" style="width:500px;height:500px"></div>
+			<script>
+			function myMap() {
+			  var mapCanvas = document.getElementById("map");
+			  var myCenter = new google.maps.LatLng(41.696211,-70.3441437); 
+			  var mapOptions = {center: myCenter, zoom: 15};
+			  var map = new google.maps.Map(mapCanvas,mapOptions);
+			  var marker = new google.maps.Marker({
+			    position: myCenter,
+			    animation: google.maps.Animation.BOUNCE
+			  });
+			  marker.setMap(map);
+			}
+			</script>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLKmNdiqIXAKzJTUGl3mCp-oe_jQHoHaM&callback=myMap"></script>
+				<div class="container">  
+			</aside>
+    	<!--GOOGLE MAPS ENDs-->
+    	
 	<!---Here Javascript will generate the bar chart.-->
 	<canvas id="mainChart"></canvas>
 
