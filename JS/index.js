@@ -229,6 +229,12 @@ function calculate_goal() {
 	document.getElementById("monthly").value = "Hello World";
 }
 
+function excel_export() {
+    var url = 'data:application/vnd.ms-excel,' + encodeURIComponent($('#tableWrap').html())
+    location.href = url
+    return false
+}
+
 //Adding comma to number
 function addCommas(nStr)
 {

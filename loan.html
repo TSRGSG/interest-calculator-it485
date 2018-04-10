@@ -62,52 +62,57 @@
 </head>
 
 <body>
-	<!--Bottom Text-->
-	<div class="container">
-		<h3>Loan Monthly Payment Calculator</h3>
-		<p>Calculate how much you need to pay each month to finish of the loan.</p>
+    <!--Bottom Text-->
+    <div class="container">
+        <h3>Loan Monthly Payment Calculator</h3>
+        <p>Calculate how much you need to pay each month to finish of the loan.</p>
 
-		<!--CALCULATOR STARTS-->
-		<fieldset>
-			<legend>Input</legend>
-			<br><p>
-				<label> Loan Amount ($): </label>
-				<input id="loan" value="Enter Value Here" />
-			</p><p>
-				<label> Annual Interest Rate (%): </label>
-				<input id="interest" value="Enter Value Here" />
-			</p><p>
-				<label> Term Period for Loan (Year): </label>
-				<input id="year" value="Enter Value Here" />
-			</p><p>
-				<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
-				<label><button type="reset" onclick="Reset()">Clear</button></label>
-			</p><p>
-				<label>Monthly Payment ($):</label>
-				<input id="monthly" value="Total" />
-			</p>
-		</fieldset>
-		<!--CALCULATOR ENDS-->
-	</div>
-	<!--Bottom Text ENDS-->
-	<!---Here Javascript will generate the bar chart -->
-	<canvas id="mainChart"></canvas>
+        <!--CALCULATOR STARTS-->
+        <fieldset>
+            <legend>Input</legend>
+            <br><p>
+                <label> Loan Amount ($): </label>
+                <input id="loan" value="Enter Value Here" />
+            </p><p>
+                <label> Annual Interest Rate (%): </label>
+                <input id="interest" value="Enter Value Here" />
+            </p><p>
+                <label> Term Period for Loan (Year): </label>
+                <input id="year" value="Enter Value Here" />
+            </p><p>
+                <label><button type="button" onclick="calculate_loan()">Calculate</button></label>
+                <label><button type="reset" onclick="Reset()">Clear</button></label>
+            </p><p>
+                <label>Monthly Payment ($):</label>
+                <input id="monthly" value="Total" />
+            </p>
+        </fieldset>
+        <!--CALCULATOR ENDS-->
+        <!--Test-->
+        <button type="button" onclick="excel_export()">Export to Excel</button>
+        <!--Test ENDS-->
+    </div>
+    <!--Bottom Text ENDS-->
+    <!---Here Javascript will generate the bar chart -->
+    <canvas id="mainChart"></canvas>
 
-	<!--- Here Javascript will generate the table-->
-	<table align="center" id="table">
-		<tr>
-			<td id="header" colspan="6"><h1>Table</h1></td>
-		</tr>
-		<tr>
-			<th>Month</th>
-			<th>Starting Balance</th>
-			<th>Interest</th>
-			<th>Principal</th>
-			<th>Ending Balance</th>
-			<th>Total Interest</th>
-		</tr>
-	</table>
-	<!-- Javascript generated table ENDS-->
+    <!--- Here Javascript will generate the table-->
+    <div id="tableWrap">
+        <table align="center" id="table">
+            <tr>
+                <td id="header" colspan="6"><h1>Table</h1></td>
+            </tr>
+            <tr>
+                <th>Month</th>
+                <th>Starting Balance</th>
+                <th>Interest</th>
+                <th>Principal</th>
+                <th>Ending Balance</th>
+                <th>Total Interest</th>
+            </tr>
+        </table>
+    </div>
+        <!-- Javascript generated table ENDS-->
 
 </body>
 </html>
