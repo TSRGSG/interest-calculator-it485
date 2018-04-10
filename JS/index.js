@@ -120,14 +120,7 @@ function calculate_loan() {
 	var total_interest = 0;
 	var total_payment = 0;
 
-	//Cleaning List
-	$(period_list).empty();
-	$(starting_balance_list).empty();
-	$(interest_list).empty();
-	$(principal_list).empty();
-	$(ending_balance_list).empty();
-	$(total_interest_list).empty();
-
+	//Cleaning Table and adding header
 	$(table).empty();
 	$(table).append("<tr><td id = \"header\" colspan = \"6\" > \
 					<h1>Table</h1>\
@@ -141,14 +134,6 @@ function calculate_loan() {
 						<th>Total Interest</th>\
 					</tr>")
 
-	//Adding Headers to list
-	$(period_list).append("<li>Month</li>");
-	$(starting_balance_list).append("<li>Starting Balance</li>");
-	$(interest_list).append("<li>Interest</li>");
-	$(principal_list).append("<li>Principal</li>");
-	$(ending_balance_list).append("<li>Ending Balance</li>");
-	$(total_interest_list).append("<li>Total Interest</li>");
-
 	//Creating Array for graphing
 	var bottom_label = ["Control"];
 	var ending_balance = ["0"];
@@ -156,35 +141,23 @@ function calculate_loan() {
 
 	//Loop for generating List
 	for (var count = 1; count <= n; count++) {
-		//Appending to period of the page
-		//$(period_list).append("<li>" + count + "</li>");
 		//Appending Graph
 		bottom_label.push(count);
 
-		//Appending to starting balance of the page
-		//$(starting_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
 		//Appending Graph
 		ending_balance.push(A.toFixed(2))
 
 		//Calculating Interest
 		I = A * i;
-		//Appending to interest list of the page
-		//$(interest_list).append("<li>" + addCommas(I.toFixed(2)) + "</li>");
 
 		//Calculating Principal
 		P = payment - I;
-		//Appending to principal list of the page
-		//$(principal_list).append("<li>" + addCommas(P.toFixed(2)) + "</li>");
 
 		//Calculatin Ending Balance
 		A = A - P;
-		//Appending to ending balance list of the page
-		//$(ending_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
 
 		//Calculating for total interest
 		total_interest += I;
-		//Appending to ending balance list of the page
-		//$(total_interest_list).append("<li>" + addCommas(total_interest.toFixed(2)) + "</li>");
 
 		//Appending Graph for total payment
 		total_payment += P;
