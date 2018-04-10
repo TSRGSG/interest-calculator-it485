@@ -128,6 +128,19 @@ function calculate_loan() {
 	$(ending_balance_list).empty();
 	$(total_interest_list).empty();
 
+	$(table).empty();
+	$(table).append("<tr><td id = \"header\" colspan = \"6\" > \
+					<h1>Table</h1>\
+					</td></tr>\
+					<tr>\
+						<th>Month</th>\
+						<th>Starting Balance</th>\
+						<th>Interest</th>\
+						<th>Principal</th>\
+						<th>Ending Balance</th>\
+						<th>Total Interest</th>\
+					</tr>")
+
 	//Adding Headers to list
 	$(period_list).append("<li>Month</li>");
 	$(starting_balance_list).append("<li>Starting Balance</li>");
@@ -144,38 +157,47 @@ function calculate_loan() {
 	//Loop for generating List
 	for (var count = 1; count <= n; count++) {
 		//Appending to period of the page
-		$(period_list).append("<li>" + count + "</li>");
+		//$(period_list).append("<li>" + count + "</li>");
 		//Appending Graph
 		bottom_label.push(count);
 
 		//Appending to starting balance of the page
-		$(starting_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
+		//$(starting_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
 		//Appending Graph
 		ending_balance.push(A.toFixed(2))
 
 		//Calculating Interest
 		I = A * i;
 		//Appending to interest list of the page
-		$(interest_list).append("<li>" + addCommas(I.toFixed(2)) + "</li>");
+		//$(interest_list).append("<li>" + addCommas(I.toFixed(2)) + "</li>");
 
 		//Calculating Principal
 		P = payment - I;
 		//Appending to principal list of the page
-		$(principal_list).append("<li>" + addCommas(P.toFixed(2)) + "</li>");
+		//$(principal_list).append("<li>" + addCommas(P.toFixed(2)) + "</li>");
 
 		//Calculatin Ending Balance
 		A = A - P;
 		//Appending to ending balance list of the page
-		$(ending_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
+		//$(ending_balance_list).append("<li>" + addCommas(A.toFixed(2)) + "</li>");
 
 		//Calculating for total interest
 		total_interest += I;
 		//Appending to ending balance list of the page
-		$(total_interest_list).append("<li>" + addCommas(total_interest.toFixed(2)) + "</li>");
+		//$(total_interest_list).append("<li>" + addCommas(total_interest.toFixed(2)) + "</li>");
 
 		//Appending Graph for total payment
 		total_payment += P;
 		cumulative_payment.push((total_interest + total_payment).toFixed(2))
+
+		//Table Injection
+		$(table).append("<tr>" + "<td>" + count 
+			+ "</td>" + "<td>" + addCommas(A.toFixed(2))
+			+ "</td>" + "<td>" + addCommas(I.toFixed(2))
+			+ "</td>" + "<td>" + addCommas(P.toFixed(2))
+			+ "</td>" + "<td>" + addCommas(A.toFixed(2))
+			+ "</td>" + "<td>" + addCommas(total_interest.toFixed(2))
+			+ "</td>" + "</tr>");
 	}
 
 	//Graphing TEST

@@ -1,78 +1,138 @@
 ﻿<!DOCTYPE HTML>
 <html lang = "en">
-	<head>
-		<meta charset = "UTF-8" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--Title-->
-		<title>Loan Monthly Payment Calculator</title>
+	<title>Loan Monthly Payment Calculator</title>
 
 	<!--JavaScript STARTS-->
-    	<script src="JS/index.js"></script>
-	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="JS/index.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<!--JavaScript ENDS-->
-	</head>
+	<!--This is Table CSS-->
+	<style>
+		body {
+			font-family: sans-serif;
+			font-size: 11pt;
+			/* Add a background if you guys want*/
+			/* background-image: ;
+				background-size: cover;
+				background-attachment: fixed;
+				*/
+		}
 
-	<body>
-		<!--Bottom Text-->
-		<div class="container">
-			<h3>Loan Monthly Payment Calculator</h3>
-			<p>Calculate how much you need to pay each month to finish of the loan.</p>
+		table {
+			width: 80%;
+		}
 
-			<!--CALCULATOR STARTS-->
-			<fieldset>
-				<legend>Input</legend>
-				<br><p>
-					<label> Loan Amount ($): </label>
-					<input id="loan" value="Enter Value Here" />
-				</p><p>
-					<label> Annual Interest Rate (%): </label>
-					<input id="interest" value="Enter Value Here" />
-				</p><p>
-					<label> Term Period for Loan (Year): </label>
-					<input id="year" value="Enter Value Here" />
-				</p><p>
-					<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
-					<label><button type="reset" onclick="Reset()">Clear</button></label>
-				</p><p>
-					<label>Monthly Payment ($):</label>
-					<input id="monthly" value="Total" />
-				</p>
-			</fieldset>
-			<!--CALCULATOR ENDS-->
-		</div>
-		<!--Bottom Text ENDS-->
 
-		<!---Here Javascript will generate the bar chart -->
-		<canvas id="mainChart"></canvas>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			opacity: 0.95;
+		}
 
-		<!--- Here Javascript will generate the list -->
-		<ul id="period_list" style="float:left;">
-			<li>Year X</li>
-		</ul>
+		th, td {
+			padding: 10px;
+			text-align: center;
+		}
 
-		<ul id="starting_balance_list" style="float:left;">
-			<li>Year X</li>
-		</ul>
+		th {
+			background-color: #a70000;
+			color: white;
+		}
 
-		<ul id="interest_list" style="float:left;">
-			<li>Interest earned this year XX</li>
-		</ul>
+		tr:nth-child(even) {
+			background-color: #e8e8e8;
+		}
 
-		<ul id="principal_list" style="float:left;">
-			<li>Interest earned this year XX</li>
-		</ul>
+		tr:nth-child(odd) {
+			background-color: white;
+		}
 
-		<ul id="ending_balance_list" style="float:left;">
-			<li>Ending balance is XX</li>
-		</ul>
+		#header {
+			background: #005cb7;
+		}
+	</style>
+	<!--Table CSS END-->
+</head>
 
-		<ul id="total_interest_list" style="float:left;">
-			<li>Ending balance is XX</li>
-		</ul>
-		<!-- Javascript generated list ENDS-->
+<body>
+	<!--Bottom Text-->
+	<div class="container">
+		<h3>Loan Monthly Payment Calculator</h3>
+		<p>Calculate how much you need to pay each month to finish of the loan.</p>
 
-	</body>
+		<!--CALCULATOR STARTS-->
+		<fieldset>
+			<legend>Input</legend>
+			<br><p>
+				<label> Loan Amount ($): </label>
+				<input id="loan" value="Enter Value Here" />
+			</p><p>
+				<label> Annual Interest Rate (%): </label>
+				<input id="interest" value="Enter Value Here" />
+			</p><p>
+				<label> Term Period for Loan (Year): </label>
+				<input id="year" value="Enter Value Here" />
+			</p><p>
+				<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
+				<label><button type="reset" onclick="Reset()">Clear</button></label>
+			</p><p>
+				<label>Monthly Payment ($):</label>
+				<input id="monthly" value="Total" />
+			</p>
+		</fieldset>
+		<!--CALCULATOR ENDS-->
+	</div>
+	<!--Bottom Text ENDS-->
+	<!---Here Javascript will generate the bar chart -->
+	<canvas id="mainChart"></canvas>
+
+	<!--Table Test-->
+	<table align="center" id="table">
+		<tr>
+			<td id="header" colspan="6"><h1>Table</h1></td>
+		</tr>
+		<tr>
+			<th>Month</th>
+			<th>Starting Balance</th>
+			<th>Interest</th>
+			<th>Principal</th>
+			<th>Ending Balance</th>
+			<th>Total Interest</th>
+		</tr>
+	</table>
+
+	<!--- Here Javascript will generate the list -->
+	<ul id="period_list" style="float:left;">
+		<li>Year X</li>
+	</ul>
+
+	<ul id="starting_balance_list" style="float:left;">
+		<li>Year X</li>
+	</ul>
+
+	<ul id="interest_list" style="float:left;">
+		<li>Interest earned this year XX</li>
+	</ul>
+
+	<ul id="principal_list" style="float:left;">
+		<li>Interest earned this year XX</li>
+	</ul>
+
+	<ul id="ending_balance_list" style="float:left;">
+		<li>Ending balance is XX</li>
+	</ul>
+
+	<ul id="total_interest_list" style="float:left;">
+		<li>Ending balance is XX</li>
+	</ul>
+	<!-- Javascript generated list ENDS-->
+
+</body>
 </html>
