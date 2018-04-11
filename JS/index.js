@@ -204,6 +204,8 @@ function calculate_loan() {
 	});
 	//Graphing END
 
+	//Generating Excel Table to download
+	excel_export(table);
 }
 
 //Calculator foe finding monthly saving to reach certain goal
@@ -218,20 +220,19 @@ function calculate_goal() {
 	document.getElementById("monthly").value = "Hello World";
 }
 
-function excel_export() {
-    $(table).tableExport({
-        headings: true,                    // (Boolean), display table headings (th/td elements) in the <thead>
-        footers: true,                     // (Boolean), display table footers (th/td elements) in the <tfoot>
-        formats: ["xlsx", "csv", "txt"],   // (String[]), filetypes for the export
-        fileName: "id",                    // (id, String), filename for the downloaded file
-        bootstrap: true,                   // (Boolean), style buttons using bootstrap
-        position: "bottom",                // (top, bottom), position of the caption element relative to table
-        ignoreRows: null,                  // (Number, Number[]), row indices to exclude from the exported file(s)
-        ignoreCols: null,                  // (Number, Number[]), column indices to exclude from the exported file(s)
-        ignoreCSS: ".tableexport-ignore",  // (selector, selector[]), selector(s) to exclude from the exported file(s)
-        emptyCSS: ".tableexport-empty",    // (selector, selector[]), selector(s) to replace cells with an empty string in the exported file(s)
-        trimWhitespace: false              // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s)
-    });  
+function excel_export(tableID) {
+	$(tableID).tableExport({
+		headers: true,                              // (Boolean), display table headers (th or td elements) in the <thead>, (default: true)
+		footers: true,                              // (Boolean), display table footers (th or td elements) in the <tfoot>, (default: false)
+		formats: ['xlsx', 'csv', 'txt'],            // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
+		filename: 'id',                             // (id, String), filename for the downloaded file, (default: 'id')
+		bootstrap: false,                           // (Boolean), style buttons using bootstrap, (default: true)
+		exportButtons: true,                        // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
+		position: 'bottom',                         // (top, bottom), position of the caption element relative to table, (default: 'bottom')
+		ignoreRows: null,                           // (Number, Number[]), row indices to exclude from the exported file(s) (default: null)
+		ignoreCols: null,                           // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
+		trimWhitespace: true                        // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
+	});
 }
 
 //Adding comma to number

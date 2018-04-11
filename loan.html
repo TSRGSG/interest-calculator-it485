@@ -91,12 +91,11 @@
             </p>
         </fieldset>
         <!--CALCULATOR ENDS-->
-        <!--Test-->
-        <button type="button" onclick="excel_export()">Export to Excel</button>
-
-        <!--Test ENDS-->
     </div>
     <!--Bottom Text ENDS-->
+
+	<button id="test">Download CSV</button>
+
     <!---Here Javascript will generate the bar chart -->
     <canvas id="mainChart"></canvas>
 
@@ -104,19 +103,18 @@
         <table align="center" id="table">
             <thead>
                 <tr>
-                    <th id="header" colspan="6"><h1>Table</h1></th>
+                    <th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
                 </tr>
+				<tr>
+					<td>Month</td>
+					<td>Starting Balance</td>
+					<td>Interest</td>
+					<td>Principal</td>
+					<td>Ending Balance</td>
+					<td>Total Interest</td>
+				</tr>
             </thead>
-            <tbody id="tbody">
-                <tr>
-                    <td>Month</td>
-                    <td>Starting Balance</td>
-                    <td>Interest</td>
-                    <td>Principal</td>
-                    <td>Ending Balance</td>
-                    <td>Total Interest</td>
-                </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
         </table>
         <!-- Javascript generated table ENDS-->
 </body>
