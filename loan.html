@@ -1,64 +1,67 @@
 ﻿<!DOCTYPE HTML>
 <html lang = "en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--Title-->
-	<title>Loan Monthly Payment Calculator</title>
+    <!--Title-->
+    <title>Loan Monthly Payment Calculator</title>
 
-	<!--JavaScript STARTS-->
-	<script src="JS/index.js"></script>
+    <!--JavaScript STARTS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/FileSaver.js"></script>
+    <script src="JS/xlsx.core.js"></script>
+    <script src="JS/tableexport.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!--<link rel="stylesheet" href="CSS/bootstrap.css">-->
+    <!--JavaScript ENDS-->
+    <!--This is Table CSS-->
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 11pt;
+            /* Add a background if you guys want*/
+            /* background-image: ;
+                background-size: cover;
+                background-attachment: fixed;
+                */
+        }
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<!--JavaScript ENDS-->
-	<!--This is Table CSS-->
-	<style>
-		body {
-			font-family: sans-serif;
-			font-size: 11pt;
-			/* Add a background if you guys want*/
-			/* background-image: ;
-				background-size: cover;
-				background-attachment: fixed;
-				*/
-		}
-
-		table {
-			width: 80%;
-		}
+        table {
+            width: 80%;
+        }
 
 
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			opacity: 0.95;
-		}
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            opacity: 0.95;
+        }
 
-		th, td {
-			padding: 10px;
-			text-align: center;
-		}
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
 
-		th {
-			background-color: #a70000;
-			color: white;
-		}
+        th {
+            background-color: #a70000;
+            color: white;
+        }
 
-		tr:nth-child(even) {
-			background-color: #e8e8e8;
-		}
+        tr:nth-child(even) {
+            background-color: #e8e8e8;
+        }
 
-		tr:nth-child(odd) {
-			background-color: white;
-		}
+        tr:nth-child(odd) {
+            background-color: white;
+        }
 
-		#header {
-			background: #005cb7;
-		}
-	</style>
-	<!--Table CSS END-->
+        #header {
+            background: #005cb7;
+        }
+    </style>
+    <!--Table CSS END-->
 </head>
 
 <body>
@@ -90,6 +93,7 @@
         <!--CALCULATOR ENDS-->
         <!--Test-->
         <button type="button" onclick="excel_export()">Export to Excel</button>
+
         <!--Test ENDS-->
     </div>
     <!--Bottom Text ENDS-->
@@ -97,22 +101,23 @@
     <canvas id="mainChart"></canvas>
 
     <!--- Here Javascript will generate the table-->
-    <div id="tableWrap">
         <table align="center" id="table">
-            <tr>
-                <td id="header" colspan="6"><h1>Table</h1></td>
-            </tr>
-            <tr>
-                <th>Month</th>
-                <th>Starting Balance</th>
-                <th>Interest</th>
-                <th>Principal</th>
-                <th>Ending Balance</th>
-                <th>Total Interest</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th id="header" colspan="6"><h1>Table</h1></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>Month</td>
+                    <td>Starting Balance</td>
+                    <td>Interest</td>
+                    <td>Principal</td>
+                    <td>Ending Balance</td>
+                    <td>Total Interest</td>
+                </tr>
+            </tbody>
         </table>
-    </div>
         <!-- Javascript generated table ENDS-->
-
 </body>
 </html>
