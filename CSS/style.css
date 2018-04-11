@@ -128,10 +128,31 @@ div {
 /*Overflow SCROLL ENDS*/
 
 /*==================================================*/
+
 /*Google MAPS*/
 
 <div id="map" style="width:400px;height:400px">
 
+/*==================================================*/
+
+/*Background Image*/
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("images/professional-background-images-for-websites-design.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+	
 /*==================================================*/
 
 /*Footer Starts*/
