@@ -11,62 +11,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/FileSaver.js"></script>
+    <script src="JS/Blob.js"></script>
     <script src="JS/xlsx.core.js"></script>
     <script src="JS/tableexport.js"></script>
+    <script src="JS/icsFormatter.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <!--<link rel="stylesheet" href="CSS/bootstrap.css">-->
     <!--JavaScript ENDS-->
-    <!--This is Table CSS-->
-    <style>
-        body {
-            font-family: sans-serif;
-            font-size: 11pt;
-            /* Add a background if you guys want*/
-            /* background-image: ;
-                background-size: cover;
-                background-attachment: fixed;
-                */
-        }
-
-        table {
-            width: 80%;
-        }
-
-
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            opacity: 0.95;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #a70000;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #e8e8e8;
-        }
-
-        tr:nth-child(odd) {
-            background-color: white;
-        }
-
-        #header {
-            background: #005cb7;
-        }
-    </style>
-    <!--Table CSS END-->
+    <link rel="stylesheet" type="text/css" href="CSS/table.css">
 </head>
 
 <body>
     <!--Bottom Text-->
-    <div class="container">
+    <div class="container" style="width:50%; float: left;">
         <h3>Loan Monthly Payment Calculator</h3>
         <p>Calculate how much you need to pay each month to finish of the loan.</p>
 
@@ -91,31 +48,33 @@
             </p>
         </fieldset>
         <!--CALCULATOR ENDS-->
+        <button type="button" onlick="testing()">TEST</button>
     </div>
     <!--Bottom Text ENDS-->
-
-	<button id="test">Download CSV</button>
-
     <!---Here Javascript will generate the bar chart -->
-    <canvas id="mainChart"></canvas>
+    <div style="width:50%; float: left;">
+        <canvas id="mainChart"></canvas>
+    </div>
 
     <!--- Here Javascript will generate the table-->
+    <div>
         <table align="center" id="table">
             <thead>
                 <tr>
                     <th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
                 </tr>
-				<tr>
-					<td>Month</td>
-					<td>Starting Balance</td>
-					<td>Interest</td>
-					<td>Principal</td>
-					<td>Ending Balance</td>
-					<td>Total Interest</td>
-				</tr>
+                <tr>
+                    <td>Month</td>
+                    <td>Starting Balance</td>
+                    <td>Interest</td>
+                    <td>Principal</td>
+                    <td>Ending Balance</td>
+                    <td>Total Interest</td>
+                </tr>
             </thead>
-            <tbody id="tbody"></tbody>
+                <tbody id="tbody"></tbody>
         </table>
+    </div>
         <!-- Javascript generated table ENDS-->
 </body>
 </html>

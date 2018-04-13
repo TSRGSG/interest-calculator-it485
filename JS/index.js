@@ -8,34 +8,50 @@ function calculate() {
     
     var r = interest / 100;    
     var A = balance;
+    var s = 0;
+    var d = 0;
 	
 	var BottomLabel = ["0"];
-	var ActualAmount = ["0"];
+    var ActualAmount = ["0"];
 
-	//Cleaning List
-	$(mainList).empty();
+    //Cleaning Table and adding header
+    $(tbody).empty();
 
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
     if (compound == 12){
 		//Main Loop (Read Carefully)
         for (count = 1; count != year + 1; count++) {
-        	A = (A * r) + parseInt(A);
-            A += monthly * 12;
-		
-			//Appending to bottom of thet page
-			$(mainList).append("<li>Year " + count + ": $" + addCommas(A.toFixed(2)) + "</li>");
+            s = A;
+            A = (A * r) + parseInt(A);
+            d = monthly * 12
+            A += d;
+            
+            //Table Injection
+            $(tbody).append("<tr>" + "<td>" + count
+                + "</td>" + "<td>" + addCommas(s.toFixed(2))
+                + "</td>" + "<td>" + addCommas((A - s - d).toFixed(2))
+                + "</td>" + "<td>" + addCommas(d.toFixed(2))
+                + "</td>" + "<td>" + addCommas(A.toFixed(2))
+                + "</td>" + "</tr>");
 	
 			//Adding to array for graph
 			BottomLabel.push("Year " + count);
 			ActualAmount.push(A);
     	}
     } else if (compound == 6) {
-        for (count = 1; count != (year * 2)+ 1; count++) {
-        	A = (A * (r/2)) + parseInt(A);
-            A += monthly * 6;
-		
-			//Appending to bottom of thet page
-			$(mainList).append("<li>Semiannually " + count + ": $" + addCommas(A.toFixed(2)) + "</li>");
+        for (count = 1; count != (year * 2) + 1; count++) {
+            s = A;
+            A = (A * (r / 2)) + parseInt(A);
+            d = monthly * 6
+            A += d;
+
+            //Table Injection
+            $(tbody).append("<tr>" + "<td>" + count
+                + "</td>" + "<td>" + addCommas(s.toFixed(2))
+                + "</td>" + "<td>" + addCommas((A - s -  d).toFixed(2))
+                + "</td>" + "<td>" + addCommas(d.toFixed(2))
+                + "</td>" + "<td>" + addCommas(A.toFixed(2))
+                + "</td>" + "</tr>");
 	
 			//Adding to array for graph
 			BottomLabel.push("Semiannually " + count);
@@ -43,23 +59,37 @@ function calculate() {
     	}	
     } else if (compound == 3) {
         for (count = 1; count != (year * 4) + 1; count++) {
+            s = A;
         	A = (A * (r/4)) + parseInt(A);
-            A += monthly * 3;
-		
-			//Appending to bottom of thet page
-			$(mainList).append("<li>Quarter " + count + ": $" + addCommas(A.toFixed(2)) + "</li>");
+            d = monthly * 3;
+            A += d;
+
+            //Table Injection
+            $(tbody).append("<tr>" + "<td>" + count
+                + "</td>" + "<td>" + addCommas(s.toFixed(2))
+                + "</td>" + "<td>" + addCommas((A - s - d).toFixed(2))
+                + "</td>" + "<td>" + addCommas(d.toFixed(2))
+                + "</td>" + "<td>" + addCommas(A.toFixed(2))
+                + "</td>" + "</tr>");
 	
 			//Adding to array for graph
 			BottomLabel.push("Quarter " + count);
 			ActualAmount.push(A);
     	}
     } else if (compound == 1) {
-        for (count = 1; count != (year * 12)+ 1; count++) {
+        for (count = 1; count != (year * 12) + 1; count++) {
+            s = A;
         	A = (A * (r/12)) + parseInt(A);
-            A += monthly * 1;
-		
-			//Appending to bottom of thet page
-			$(mainList).append("<li>Month " + count + ": $" + addCommas(A.toFixed(2)) + "</li>");
+            d = monthly * 1;
+            A += d;
+
+            //Table Injection
+            $(tbody).append("<tr>" + "<td>" + count
+                + "</td>" + "<td>" + addCommas(s.toFixed(2))
+                + "</td>" + "<td>" + addCommas((A - s - d).toFixed(2))
+                + "</td>" + "<td>" + addCommas(d.toFixed(2))
+                + "</td>" + "<td>" + addCommas(A.toFixed(2))
+                + "</td>" + "</tr>");
 	
 			//Adding to array for graph
 			BottomLabel.push("Month " + count);
@@ -94,6 +124,9 @@ function calculate() {
     options: {}
 	});
 	//Graphing END
+
+    //Generating Excel Table to download
+    excel_export(table);
 }
 
 
@@ -205,7 +238,9 @@ function calculate_loan() {
 	//Graphing END
 
 	//Generating Excel Table to download
-	excel_export(table);
+    excel_export(table);
+
+    testing();
 }
 
 //Calculator foe finding monthly saving to reach certain goal
@@ -228,7 +263,7 @@ function excel_export(tableID) {
 		filename: 'id',                             // (id, String), filename for the downloaded file, (default: 'id')
 		bootstrap: false,                           // (Boolean), style buttons using bootstrap, (default: true)
 		exportButtons: true,                        // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
-		position: 'bottom',                         // (top, bottom), position of the caption element relative to table, (default: 'bottom')
+		position: 'top',                            // (top, bottom), position of the caption element relative to table, (default: 'bottom')
 		ignoreRows: null,                           // (Number, Number[]), row indices to exclude from the exported file(s) (default: null)
 		ignoreCols: null,                           // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
 		trimWhitespace: true                        // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
@@ -247,4 +282,8 @@ function addCommas(nStr)
 		x1 = x1.replace(rgx, '$1' + ',' + '$2');
 	}
 	return x1 + x2;
+}
+
+function testing() {
+    alert("Hello! I'm testing box!");
 }
