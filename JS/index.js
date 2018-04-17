@@ -15,6 +15,7 @@ function calculate() {
     var ActualAmount = ["0"];
 
     //Cleaning Table and adding header
+	table.remove();
     $(tbody).empty();
 
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
@@ -238,9 +239,7 @@ function calculate_loan() {
 	//Graphing END
 
 	//Generating Excel Table to download
-    excel_export(table);
-
-    testing();
+    //excel_export(table);
 }
 
 //Calculator foe finding monthly saving to reach certain goal
@@ -268,6 +267,10 @@ function excel_export(tableID) {
 		ignoreCols: null,                           // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
 		trimWhitespace: true                        // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
 	});
+
+	table.update({
+		filename: "tableID"     // pass in a new set of properties
+	});
 }
 
 //Adding comma to number
@@ -284,6 +287,7 @@ function addCommas(nStr)
 	return x1 + x2;
 }
 
-function testing() {
-    alert("Hello! I'm testing box!");
+function test() {
+	document.getElementById("test").innerHTML = "YOU CLICKED ME!";
+	excel_export(table);
 }
