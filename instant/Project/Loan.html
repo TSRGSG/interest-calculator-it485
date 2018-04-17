@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <!--Title-->
+    <title>Loan Monthly Payment Calculator</title>
+
+    <!--JavaScript STARTS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/FileSaver.js"></script>
+    <script src="assets/js/Blob.js"></script>
+    <script src="assets/js/xlsx.core.js"></script>
+    <script src="assets/js/tableexport.js"></script>
+    <script src="assets/js/icsFormatter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!--<link rel="stylesheet" href="CSS/bootstrap.css">-->
+    <!--JavaScript ENDS-->
+    <link rel="stylesheet" type="text/css" href="CSS/table.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home.html"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="Home.html">Home</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="aboutwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/aboutwrap -->
+	
+	<div class="container">
+		<div class="row centered mt mb">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>Loan</h2>
+				</div>
+
+		</div><! --/row -->
+	</div><! --/container -->
+	
+	<body>
+	<!--Bottom Text-->
+	<div class="container">
+		<h3>Loan Monthly Payment Calculator</h3>
+		<p>Calculate how much you need to pay each month to finish of the loan.</p>
+
+		<!--CALCULATOR STARTS-->
+		<fieldset>
+			<legend>Input</legend>
+			<br><p>
+				<label> Loan Amount ($): </label>
+				<input id="loan" value="Enter Value Here" />
+			</p><p>
+				<label> Annual Interest Rate (%): </label>
+				<input id="interest" value="Enter Value Here" />
+			</p><p>
+				<label> Term Period for Loan (Year): </label>
+				<input id="year" value="Enter Value Here" />
+			</p><p>
+				<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
+				<label><button type="reset" onclick="Reset()">Clear</button></label>
+			</p><p>
+				<label>Monthly Payment ($):</label>
+				<input id="monthly" value="Total" />
+			</p>
+		</fieldset>
+		<!--CALCULATOR ENDS-->
+	</div>
+
+	<!--Bottom Text ENDS-->
+	<!---Here Javascript will generate the bar chart -->
+		<canvas id="mainChart"></canvas>
+
+	<!--- Here Javascript will generate the table-->
+	<div>
+		<table align="center" id="table">
+			<thead>
+				<tr>
+					<th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
+				</tr>
+				<tr>
+					<td>Month</td>
+					<td>Starting Balance</td>
+					<td>Interest</td>
+					<td>Principal</td>
+					<td>Ending Balance</td>
+					<td>Total Interest</td>
+				</tr>
+			</thead>
+			<tbody id="tbody"></tbody>
+		</table>
+	</div>
+	<!-- Javascript generated table ENDS-->
+</body>
+
+	
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-dribbble"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-twitter"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-instagram"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-tumblr"></i></a>
+				</div>
+			
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/social -->
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>Calculator</b></p>
+				</div>
+			
+				<div class="col-lg-4">
+					<!--Copyrights-->
+				<p>
+					&copy; Copyright IT485 Spring Group 4
+				</p>
+				</div>
+			
+			</div>
+		
+		</div>
+	</div><! --/footerwrap -->
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

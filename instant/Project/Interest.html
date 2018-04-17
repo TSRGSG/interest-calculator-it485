@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Compounding Interest Calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<!--JavaScript STARTS-->
+    <script src="assets/js/index.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/table.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!--JavaScript ENDS-->
+
+
+  <body>
+
+      <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home.html"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="Home.html">Home</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="aboutwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/aboutwrap -->
+	
+	<div class="container">
+		<div class="row centered mt mb">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>Interest Calculator</h2>
+                <p>Calculate and Cut down cost or save your money.</p></h2>
+				</div>
+
+		</div><! --/row -->
+	</div><! --/container -->
+	
+	<!--Bottom Text-->
+
+                <!--CALCULATOR STARTS-->
+                <section>
+                    <fieldset>
+                        <legend>Input</legend>
+                        <br><p>
+                            <label> Beginning Balance: </label>
+                            <input id="balance" value="Enter Value Here" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <label> Monthly Payments ($):</label>
+                            <input id="monthly" value="Enter Value Here" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <label> Annual Interest Rate (%):</label>
+                            <input id="interest" value="Enter Value Here" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
+                            <input id="compound" value="Enter Value Here" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <label> Time Period: </label>
+                            <input id="year" value="Enter Value Here" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <!--Total Amount-->
+                            <label>Total Amount:</label>
+                            <input id="total" value="Total" />
+                            </br>
+                        </p>
+                        <br><p>
+                            <!--Buttons Calculate and Reset-->
+                            <label><button type="button" onclick="calculate()">Calculate</button></label>
+                            <label><button type="reset" onclick="Reset()">Clear</button></label>
+                            </br>
+                        </p>
+
+                    </fieldset>
+
+                </section>
+                <!--CALCULATOR ENDS-->
+                <!---Here Javascript will generate the bar chart.-->
+                <canvas id="mainChart"></canvas>
+
+                <!--- Here Javascript will generate the table-->
+                <table align="center" id="table">
+                    <thead>
+                        <tr>
+                            <th id="header" colspan="6"><h1>Interest Payment Table</h1></th>
+                        </tr>
+                        <tr>
+                            <td>Period</td>
+                            <td>Starting Balance</td>
+                            <td>Interest</td>
+                            <td>Deposit</td>
+                            <td>Ending Balance</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+
+                <!-- Javascript generated table ENDS-->
+
+            </div>
+
+	
+	
+	
+	
+	
+	
+	
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-dribbble"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-twitter"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-instagram"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="#"><i class="fa fa-tumblr"></i></a>
+				</div>
+			
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/social -->
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>WEB DESIGNER, DEVELOPER & GAME ADDICT</b></p>
+				</div>
+			
+				<div class="col-lg-4">
+					<p>Living in the amazing London.</p>
+				</div>
+				<div class="col-lg-4">
+					<p>hello@instant.com</p>
+				</div>
+			
+			</div>
+		
+		</div>
+	</div><! --/footerwrap -->
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
