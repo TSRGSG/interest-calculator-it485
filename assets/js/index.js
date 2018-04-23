@@ -15,7 +15,6 @@ function calculate() {
     var ActualAmount = ["0"];
 
     //Cleaning Table and adding header
-	table.remove();
     $(tbody).empty();
 
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
@@ -24,7 +23,7 @@ function calculate() {
         for (count = 1; count != year + 1; count++) {
             s = A;
             A = (A * r) + parseInt(A);
-            d = monthly * 12
+			d = monthly * 12;
             A += d;
             
             //Table Injection
@@ -127,7 +126,7 @@ function calculate() {
 	//Graphing END
 
     //Generating Excel Table to download
-    excel_export(table);
+    //excel_export(table);
 }
 
 
