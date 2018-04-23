@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -72,59 +72,67 @@
 	<div class="container">
 		<div class="row centered mt mb">
 			<div class="col-lg-8 col-lg-offset-2">
-	<!--TOP Text STARTS -->
-	<div class="">
-		<h3>Savings Calculator</h3>
-		<p>Saving your money is important</p>
-	<!--TOP Text ENDS-->
+				<!--TOP Text STARTS -->
+				<div class="">
+					<h3>Savings Calculator</h3>
+					<p>Saving your money is important</p>
+					<!--TOP Text ENDS-->
+					<!--CALCULATOR STARTS-->
+					<fieldset>
+						<legend>Input</legend>
+						<br><p>
+							<label> Beginning Balance ($): </label>
+							<input id="balance" value="Enter Value Here" />
+						</p><p>
+							<label> Monthly Payments ($):</label>
+							<input id="monthly" value="Enter Value Here" />
+						</p><p>
+							<label> Annual Interest Rate (%):</label>
+							<input id="interest" value="Enter Value Here" />
+						</p><p>
+							<label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
+							<input id="compound" value="Enter Value Here" />
+						</p><p>
+							<label> Time Period (Year): </label>
+							<input id="year" value="Enter Value Here" />
+						</p><p>
+							<!--Buttons Calculate and Reset-->
+							<label><button type="button" onclick="calculate()">Calculate</button></label>
+							<label><button type="reset" onclick="Reset()">Clear</button></label>
+						</p><p>
+							<!--Total Amount-->
+							<label>Total Amount ($):</label>
+							<input id="total" value="Total" />
+						</p>
+						<label><button type="button" onclick="Calendar()">Download Calendar</button></label>
 
-		<!--CALCULATOR STARTS-->
-		<fieldset>
-			<legend>Input</legend>
-			<br><p>
-				<label> Saved Amount ($): </label>
-				<input id="loan" value="Enter Value Here" />
-			</p><p>
-				<label> Annual Interest Rate (%): </label>
-				<input id="interest" value="Enter Value Here" />
-			</p><p>
-				<label> Term Period for Saved (Year): </label>
-				<input id="year" value="Enter Value Here" />
-			</p><p>
-				<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
-				<label><button type="reset" onclick="Reset()">Clear</button></label>
-			</p><p>
-				<label>Monthly Payment ($):</label>
-				<input id="monthly" value="Total" />
-			</p>
-		</fieldset>
-		<!--CALCULATOR ENDS-->
-	</div>
+					</fieldset>
+					<!--CALCULATOR ENDS-->
+				</div>
 
-	<!--Bottom Text ENDS-->
-	<!---Here Javascript will generate the bar chart -->
-		<canvas id="mainChart"></canvas>
+				<!--Bottom Text ENDS-->
+				<!---Here Javascript will generate the bar chart -->
+				<canvas id="mainChart"></canvas>
 
-	<!--- Here Javascript will generate the table-->
-	<div>
-		<table align="center" id="table">
-			<thead>
-				<tr>
-					<th id="header" colspan="6"><h1>Saving Table</h1></th>
-				</tr>
-				<tr>
-					<td>Month</td>
-					<td>Starting Balance</td>
-					<td>Interest</td>
-					<td>Principal</td>
-					<td>Ending Balance</td>
-					<td>Total Interest</td>
-				</tr>
-			</thead>
-			<tbody id="tbody"></tbody>
-		</table>
-	</div>
-	<!-- Javascript generated table ENDS-->
+				<!--- Here Javascript will generate the table-->
+				<div>
+					<table align="center" id="table">
+						<thead>
+							<tr>
+								<th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
+							</tr>
+							<tr>
+								<td>Period</td>
+								<td>Starting Balance</td>
+								<td>Interest</td>
+								<td>Deposit</td>
+								<td>Ending Balance</td>
+							</tr>
+						</thead>
+						<tbody id="tbody"></tbody>
+					</table>
+				</div>
+				<!-- Javascript generated table ENDS-->
 </body>
 
 	
