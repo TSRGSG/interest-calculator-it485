@@ -1,14 +1,3 @@
-/*
- * Author: Carlos Alvarez
- * URL: http://Alvarez.is
- *
- * Project Name: NYC Design
- * Version: 1.0
- * Date: 04-20-2014
- * URL: 
- */
-
-
 /* ==========================================================================
    Base Styles, Bootstrap Modifications & Fonts Import
    ========================================================================== */
@@ -28,9 +17,7 @@
     text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
+/* A better looking default horizontal rule */
 
  hr {
     display: block;
@@ -72,7 +59,49 @@ h1, h2, h3, h4, h5, h6 {
     color: #4a4a4a;
 }
 
+/*Contact Form*/
 
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+/*Creating the circle ovals*/
+.container {
+    border-radius: 150px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Rounded Corner */
+.input {
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+}
+
+/*Contact Form Ends*/
+
+/*Nav Bar STARTS*/
 .navbar-brand {
 	font-weight: 700;
 }
@@ -95,12 +124,13 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default .navbar-nav > li > a {
 	color: #1abc9c;
 }
-
+/*Nav Bar ENDS*/
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
 
-#headerwrap {
+/*Home Image Wrap STARTS*/
+#homewrap {
 	background: url(../img/back.jpg) no-repeat center top;
 	margin-top: -70px;
 	padding-top: 250px;
@@ -121,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
-#headerwrap h1 {
+#homewrap h1 {
 	color:#ffffff;
 	padding-top: 10px;
 	padding-bottom: 20px;
@@ -130,10 +160,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-#headerwrap h4 {
+#homewrap h4 {
 	font-weight: 400;
 	color: #ffffff
 }
+/*Home Image Wrap ENDS*/
 
 #social {
 	padding-top: 50px;
@@ -161,7 +192,8 @@ h1, h2, h3, h4, h5, h6 {
 	margin-left: 10px;
 }
 
-#workwrap {	
+/*Interest Image wrap STARTS*/
+#interestwrap {	
 	background: url(../img/work.jpg) no-repeat center top;
 	margin-top: -70px;
 	padding-top: 250px;
@@ -182,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
-#workwrap h1 {
+#interestwrap h1 {
 	color:#ffffff;
 	padding-top: 10px;
 	padding-bottom: 20px;
@@ -191,12 +223,88 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-#workwrap h4 {
+#interestwrap h4 {
 	font-weight: 400;
 	color: #ffffff
 }
+/*Interest Image wrap ENDS*/
 
-#aboutwrap {	
+/*Loans Image wrap STARTS*/
+#loanswrap {	
+	background: url(../img/loans.jpg) no-repeat center top;
+	margin-top: -70px;
+	padding-top: 250px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 650px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#loanswrap h1 {
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+#loanswrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
+/*Loans Image wrap ENDS*/
+
+/*Savings Image wrap STARTS*/
+#savingswrap {	
+	background: url(../img/savings.jpg) no-repeat center top;
+	margin-top: -70px;
+	padding-top: 250px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 650px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#savingswrap h1 {
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+#savingswrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
+/*Savings Image wrap ENDS*/
+
+/*Contact Image Wrap STARTS*/
+#contactwrap {	
 	background: url(../img/about.jpg) no-repeat center top;
 	margin-top: -70px;
 	padding-top: 250px;
@@ -217,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
+/*Contact Image Wrap ENDS*/
 
 
 
