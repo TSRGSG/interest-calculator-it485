@@ -19,10 +19,25 @@
 /*Background Color STARTS*/
 
 body {
-    background-color: grey;
+   background-color: #F5F5F5;
 }
 /*Background Color ENDS*/
 
+/*Tables for LOAN and SAVINGS STARTS*/
+table, th, td
+{
+	border:1px solid black;
+	border-collapse: collapse;
+	opacity: 0.95;
+	
+}
+	th, td
+	{
+			padding: 10px;
+			text-align: center;
+		
+	}
+/*Tables for LOAN and SAVINGS ENDS*/
 
 /* A better looking default horizontal rule */
 
