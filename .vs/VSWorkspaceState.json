@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\JS"
+    "\\assets",
+    "\\assets\\js",
+    "\\OLD"
   ],
-  "SelectedNode": "\\loan.html",
+  "SelectedNode": "\\Contact.html",
   "PreviewInSolutionExplorer": false
 }

@@ -79,34 +79,28 @@
 					<!--TOP Text ENDS-->
 					<!--CALCULATOR STARTS-->
 					<fieldset>
-						<legend>Input</legend>
-						<br><p>
-							<label> Beginning Balance ($): </label>
-							<input id="balance" value="Enter Value Here" />
-						</p><p>
-							<label> Monthly Payments ($):</label>
-							<input id="monthly" value="Enter Value Here" />
-						</p><p>
-							<label> Annual Interest Rate (%):</label>
-							<input id="interest" value="Enter Value Here" />
-						</p><p>
-							<label> Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)</label>
-							<input id="compound" value="Enter Value Here" />
-						</p><p>
-							<label> Time Period (Year): </label>
-							<input id="year" value="Enter Value Here" />
-						</p><p>
+						<!--<legend>Input</legend>-->
+						<p>
+							Beginning Balance ($):
+							<input type="text" id="balance" value="Enter Value Here" /><br>
+							Monthly Payments ($):
+							<input type="text" id="monthly" value="Enter Value Here" /><br>
+							Annual Interest Rate (%):
+							<input type="text" id="interest" value="Enter Value Here" /><br>
+							Compounding Rate: (12 - Yearly, 6 - Semiannually, 3 - Quarterly, 1 - Monthly)
+							<input type="text" id="compound" value="Enter Value Here" /><br>
+							Time Period (Year):
+							<input type="text"  id="year" value="Enter Value Here" /><br>
 							<!--Buttons Calculate and Reset-->
 							<label><button type="button" onclick="calculate()">Calculate</button></label>
-							<label><button type="reset" onclick="Reset()">Clear</button></label>
-						</p><p>
+							<label><button type="reset" onclick="Reset()">Clear</button></label><br>
+							<hr>
 							<!--Total Amount-->
-							<label>Total Amount ($):</label>
-							<input id="total" value="Total" />
+							Total Amount ($):
+							<input type="text" id="total" value="Total" />
 						</p>
 						<label><button type="button" onclick="cal.download('Schedule')">Download Calendar</button></label>
 						<label><button type="button" onclick="Sheet()">Download Sheet</button></label>
-
 					</fieldset>
 					<!--CALCULATOR ENDS-->
 				</div>
@@ -120,11 +114,7 @@
 					<table align="center" id="table" style="display: none;">
 						<thead>
 							<tr>
-<<<<<<< HEAD
-								<th id="header" colspan="6"><h1>Savings Payment Table</h1></th>
-=======
 								<th id="header" colspan="6"><h1>Compound Interest Table</h1></th>
->>>>>>> 90c7d570e5861d46d2093dcdb768071102bbe661
 							</tr>
 							<tr>
 								<td>Period</td>
