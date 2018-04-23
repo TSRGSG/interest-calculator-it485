@@ -37,6 +37,20 @@ table, th, td
 			text-align: center;
 		
 	}
+	
+/*Tables Colors*/
+
+th
+{
+		background-color: #a7000;
+		color: white;
+}
+
+tr:nth-child(even)
+{
+		background-color: #e8e8e8;
+}
+
 /*Tables for LOAN and SAVINGS ENDS*/
 
 /* A better looking default horizontal rule */
@@ -60,6 +74,16 @@ table, th, td
 
 .mb {
 	margin-bottom: 80px;
+}
+
+/*Sizing of the websites and get rid of the white lines on the right.*/
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 /* ==========================================================================
