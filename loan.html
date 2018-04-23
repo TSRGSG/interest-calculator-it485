@@ -79,22 +79,18 @@
 
 		<!--CALCULATOR STARTS-->
 		<fieldset>
-			<legend>Input</legend>
-			<br><p>
-				<label> Loan Amount ($): </label>
-				<input id="loan" value="Enter Value Here" />
-			</p><p>
-				<label> Annual Interest Rate (%): </label>
-				<input id="interest" value="Enter Value Here" />
-			</p><p>
-				<label> Term Period for Loan (Year): </label>
-				<input id="year" value="Enter Value Here" />
-			</p><p>
+			<p>
+				Loan Amount ($):
+				<input type="text" id="loan" value="Enter Value Here" /><br>
+				Annual Interest Rate (%):
+				<input type="text" id="interest" value="Enter Value Here" /><br>
+				Term Period for Loan (Year):
+				<input type="text" id="year" value="Enter Value Here" /><br>
 				<label><button type="button" onclick="calculate_loan()">Calculate</button></label>
 				<label><button type="reset" onclick="Reset()">Clear</button></label>
-			</p><p>
-				<label>Monthly Payment ($):</label>
-				<input id="monthly" value="Total" />
+			<hr>
+				Monthly Payment ($):
+				<input type="text" id="monthly" value="Total" />
 			</p>
 			<label><button type="button" onclick="cal.download('Schedule')">Download Calendar</button></label>
 			<label><button type="button" onclick="Sheet()">Download Sheet</button></label>
