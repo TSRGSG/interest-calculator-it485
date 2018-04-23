@@ -96,7 +96,8 @@
 				<label>Monthly Payment ($):</label>
 				<input id="monthly" value="Total" />
 			</p>
-			<label><button type="button" onclick="Calendar()">Download Calendar</button></label>
+			<label><button type="button" onclick="cal.download('Schedule')">Download Calendar</button></label>
+			<label><button type="button" onclick="Sheet()">Download Sheet</button></label>
 		</fieldset>
 		<!--CALCULATOR ENDS-->
 	</div>
@@ -108,7 +109,7 @@
 <!--Bottom Table STARTS-->
 	<!--- Here Javascript will generate the table-->
 	<div>
-		<table align="center" id="table">
+		<table align="center" id="table" style="display: none;">
 			<thead>
 				<tr>
 					<th id="header" colspan="6"><h1>Loan Payment Table</h1></th>

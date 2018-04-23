@@ -1,37 +1,37 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <!--Title-->
-    <title>Savings Calculator</title>
+	<!--Title-->
+	<title>Savings Calculator</title>
 
-    <!--JavaScript STARTS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/FileSaver.js"></script>
-    <script src="assets/js/Blob.js"></script>
-    <script src="assets/js/xlsx.core.js"></script>
-    <script src="assets/js/tableexport.js"></script>
-    <script src="assets/js/icsFormatter.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <!--<link rel="stylesheet" href="CSS/bootstrap.css">-->
-    <!--JavaScript ENDS-->
-    <link rel="stylesheet" type="text/css" href="CSS/table.css">
+	<!--JavaScript STARTS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/js/index.js"></script>
+	<script src="assets/js/Blob.js"></script>
+	<script src="assets/js/FileSaver.js"></script>
+	<script src="assets/js/xlsx.core.js"></script>
+	<script src="assets/js/tableexport.js"></script>
+	<script src="assets/js/icsFormatter.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<!--<link rel="stylesheet" href="CSS/bootstrap.css">-->
+	<!--JavaScript ENDS-->
+	<link rel="stylesheet" type="text/css" href="CSS/table.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
-  </head>
+</head>
 
   <body>
 
@@ -104,7 +104,8 @@
 							<label>Total Amount ($):</label>
 							<input id="total" value="Total" />
 						</p>
-						<label><button type="button" onclick="Calendar()">Download Calendar</button></label>
+						<label><button type="button" onclick="cal.download('Schedule')">Download Calendar</button></label>
+						<label><button type="button" onclick="Sheet()">Download Sheet</button></label>
 
 					</fieldset>
 					<!--CALCULATOR ENDS-->
@@ -116,10 +117,14 @@
 
 				<!--- Here Javascript will generate the table-->
 				<div>
-					<table align="center" id="table">
+					<table align="center" id="table" style="display: none;">
 						<thead>
 							<tr>
+<<<<<<< HEAD
 								<th id="header" colspan="6"><h1>Savings Payment Table</h1></th>
+=======
+								<th id="header" colspan="6"><h1>Compound Interest Table</h1></th>
+>>>>>>> 90c7d570e5861d46d2093dcdb768071102bbe661
 							</tr>
 							<tr>
 								<td>Period</td>
