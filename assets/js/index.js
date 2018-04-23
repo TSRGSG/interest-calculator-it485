@@ -15,6 +15,7 @@ function calculate() {
     var ActualAmount = ["0"];
 
     //Cleaning Table and adding header
+	$("#table").show();
     $(tbody).empty();
 
 	//Checking for Yearly, Semiannually, Quarterly, & Monthly.
@@ -126,7 +127,7 @@ function calculate() {
 	//Graphing END
 
     //Generating Excel Table to download
-    //excel_export(table);
+    excel_export(table);
 }
 
 
@@ -154,6 +155,7 @@ function calculate_loan() {
 	var total_payment = 0;
 
 	//Cleaning Table and adding header
+	$("#table").show();
 	$(tbody).empty();
 
 	//Creating Array for graphing
@@ -265,10 +267,6 @@ function excel_export(tableID) {
 		ignoreRows: null,                           // (Number, Number[]), row indices to exclude from the exported file(s) (default: null)
 		ignoreCols: null,                           // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
 		trimWhitespace: true                        // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
-	});
-
-	table.update({
-		filename: "tableID"     // pass in a new set of properties
 	});
 }
 
