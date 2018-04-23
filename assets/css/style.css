@@ -16,6 +16,13 @@
     color: #a4003a;
     text-shadow: none;
 }
+/*Background Color STARTS*/
+
+body {
+    background-color: grey;
+}
+/*Background Color ENDS*/
+
 
 /* A better looking default horizontal rule */
 
