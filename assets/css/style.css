@@ -213,32 +213,6 @@ input[type=submit]:hover {
 }
 /*Home Image Wrap ENDS*/
 
-#social {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: #f2f2f2;
-}
-
-#social i {
-	font-size: 40px;
-	color: #4a4a4a
-}
-
-#social i:hover {
-	color: #1abc9c
-}
-
-#footerwrap {
-	padding-top: 70px;
-	padding-bottom: 50px;
-	background-color: #2f2f2f;
-}
-
-#footerwrap p {
-	color: #f2f2f2;
-	margin-left: 10px;
-}
-
 /*Interest Image wrap STARTS*/
 #interestwrap {	
 	background: url(../img/work.jpg) no-repeat center top;
@@ -373,6 +347,33 @@ input[type=submit]:hover {
 }
 
 /*Contact Image Wrap ENDS*/
+
+#social {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #f2f2f2;
+}
+
+#social i {
+	font-size: 40px;
+	color: #4a4a4a
+}
+
+#social i:hover {
+	color: #1abc9c
+}
+
+#footerwrap {
+	padding-top: 70px;
+	padding-bottom: 50px;
+	background-color: #2f2f2f;
+}
+
+#footerwrap p {
+	color: #f2f2f2;
+	margin-left: 10px;
+}
+
 
 
 
