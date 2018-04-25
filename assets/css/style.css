@@ -346,6 +346,19 @@ input[type=submit]:hover {
     background-size: cover;
 }
 
+#contactwrap h1 {
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+#contactwrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
 /*Contact Image Wrap ENDS*/
 
 #social {
