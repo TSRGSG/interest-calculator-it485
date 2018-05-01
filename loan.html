@@ -111,30 +111,32 @@
 
 	<!--Bottom Text ENDS-->
 	<!---Here Javascript will generate the bar chart -->
-		<canvas id="mainChart"></canvas>
-
-<!--Bottom Table STARTS-->
-	<!--- Here Javascript will generate the table-->
 	<div>
-		<table align="center" id="table" style="display: none;">
-			<thead>
-				<tr>
-					<th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
-				</tr>
-				<tr>
-					<td>Month</td>
-					<td>Starting Balance</td>
-					<td>Interest</td>
-					<td>Principal</td>
-					<td>Ending Balance</td>
-					<td>Total Interest</td>
-				</tr>
-			</thead>
-			<tbody id="tbody"></tbody>
-		</table>
+		<canvas id="mainChart"></canvas>
 	</div>
-	<!-- Javascript generated table ENDS-->
-	<!--Bottom Table ENDS-->
+
+		<!--Bottom Table STARTS-->
+		<!--- Here Javascript will generate the table-->
+		<div>
+			<table align="center" id="table" style="display: none;">
+				<thead>
+					<tr>
+						<th id="header" colspan="6"><h1>Loan Payment Table</h1></th>
+					</tr>
+					<tr>
+						<td>Month</td>
+						<td>Starting Balance</td>
+						<td>Interest</td>
+						<td>Principal</td>
+						<td>Ending Balance</td>
+						<td>Total Interest</td>
+					</tr>
+				</thead>
+				<tbody id="tbody"></tbody>
+			</table>
+		</div>
+		<!-- Javascript generated table ENDS-->
+		<!--Bottom Table ENDS-->
 </body>
 
 	
